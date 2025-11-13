@@ -1,0 +1,36 @@
+# MySQL → BigQuery Sync Config
+
+mysql:
+  ssh_host: your_ssh_host
+  ssh_port: 22
+  ssh_user: your_ssh_user
+  ssh_private_key: key.ppk               # Path relative to repo root
+  db_user: your_db_user
+  db_password: your_db_password
+  db_name: your_db_name
+  db_port: 3306
+  incremental_column: updated_at
+
+bigquery:
+  project_id: your_project_id
+  dataset_id: your_dataset_id
+  metadata_table_id: your_metadata_table_id
+  credentials_file: key.json             # Path to service account JSON file relative to repo root
+  alert_recipients:
+    - email1@example.com
+    - email2@example.com
+
+tables:
+  - mysql_table: testtable1
+    bq_table: testtable1
+    incremental_column: updated_at
+    primary_key: id
+
+  - mysql_table: testtable2
+    bq_table: testtable2
+    incremental_column: updated_at
+    primary_key: id
+
+  - mysql_table: testtable3
+    bq_table: testtable3
+    primary_key: id
