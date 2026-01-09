@@ -1,0 +1,57 @@
+# MySQL → BigQuery Sync Config
+
+mysql:
+  ssh_host: 139.162.237.8
+  ssh_port: 22
+  ssh_user: SSHUSER
+  ssh_private_key: key.ppk                                                              # Path relative to repo root
+  db_user: DBUSER
+  db_password: DBPASSWORD
+  db_name: DBNAME
+  db_port: 3306
+  incremental_column: updated_at
+
+bigquery:
+  project_id: PROJECTID
+  dataset_id: DATASETID
+  staging_dataset_id: STAGINGDATASETID
+  metadata_table_id: METADATATABLEID
+  credentials_file: key.json                                                           # Path to service account JSON file relative to repo root
+  alert_recipients:
+    - email1@abc.com
+
+# Email configuration (for notifier.py)
+email:
+  sender_email: sendermail@abc.com
+  sender_password: SPASSWORD                                                           # Use app-specific password for Gmail
+  smtp_server: smtp.gmail.com
+  smtp_port: 587
+
+# Optional: Telegram configuration
+telegram:
+  bot_token: BOTTOKEN                                                                  # Get from @BotFather
+  chat_id: CHATID                                                                  # Your telegram chat/group ID
+  cloud_function_url: https://functionname.region.run.app          # Cloud Run Function URL
+
+# Tables to sync
+tables:
+  - mysql_table: table1
+    bq_table: table1
+    incremental_column: updated_at                                                     # Can override default
+    primary_key: primary_key
+
+  - mysql_table: table2
+    bq_table: table2
+    incremental_column: updated_at
+    primary_key: primary_key
+
+  - mysql_table: table3
+    bq_table: table3
+    incremental_column: updated_at                                                    # Add if missing
+    primary_key: primary_key
+    
+  - mysql_table: table4
+    bq_table: table4
+    incremental_column: updated_at                                                    # Add if missing
+    primary_key: primary_key
+    
