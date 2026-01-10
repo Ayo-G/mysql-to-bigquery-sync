@@ -157,4 +157,4 @@ These lessons informed v3's schema monitoring approach.
 
 ---
 
-**Next:** See [vesrion 3](../version%203/README.md)
+**Next:** See [version 3](../version%203/README.md)
