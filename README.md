@@ -20,7 +20,7 @@ A data pipeline that syncs MySQL tables to BigQuery, evolving from basic full-ta
 
 This repository shows the evolution of the pipeline through three versions, each addressing real production needs:
 
-### [v3 - Schema Monitoring](./version3) (Current)
+### [v3 - Schema Monitoring](https://github.com/Ayo-G/mysql-to-bigquery-sync/tree/main/version%203) (Current)
 **Problem Solved:** Schema changes in MySQL broke the pipeline  
 **Solution:** Automatic detection and addition of new columns
 
@@ -34,7 +34,7 @@ This repository shows the evolution of the pipeline through three versions, each
 
 ---
 
-### [v2 - Incremental Loading](./version2)
+### [v2 - Incremental Loading](https://github.com/Ayo-G/mysql-to-bigquery-sync/tree/main/version%202)
 **Problem Solved:** Full table syncs were slow and resource-intensive  
 **Solution:** Timestamp-based incremental loading
 
@@ -47,7 +47,7 @@ This repository shows the evolution of the pipeline through three versions, each
 
 ---
 
-### [v1 - Basic Sync](./version1)
+### [v1 - Basic Sync](https://github.com/Ayo-G/mysql-to-bigquery-sync/tree/main/version%201)
 **Problem Solved:** Manual data exports were time-consuming  
 **Solution:** Automated daily full-table sync
 
@@ -79,7 +79,7 @@ nano config.yaml
 python main.py
 ```
 
-For detailed setup, see the [v3 README](./version3/README.md).
+For detailed setup, see the [v3 README](https://github.com/Ayo-G/mysql-to-bigquery-sync/tree/main/version%203/README.md).
 
 ## 🏗️ Architecture (v3)
 
@@ -157,9 +157,9 @@ Before each sync, the pipeline:
 
 ## 📖 Documentation
 
-- **[v1 - Basic Sync](./version1/README.md)** - Initial full-table sync implementation
-- **[v2 - Incremental Loading](./version2/README.md)** - Timestamp-based change detection
-- **[v3 - Schema Monitoring](./version3/README.md)** - Current production version
+- **[v1 - Basic Sync](https://github.com/Ayo-G/mysql-to-bigquery-sync/tree/main/version%201/README.md)** - Initial full-table sync implementation
+- **[v2 - Incremental Loading](https://github.com/Ayo-G/mysql-to-bigquery-sync/tree/main/version%202/README.md)** - Timestamp-based change detection
+- **[v3 - Schema Monitoring](https://github.com/Ayo-G/mysql-to-bigquery-sync/tree/main/version%203/README.md)** - Current production version
 
 ## 🎯 Use Cases
 
